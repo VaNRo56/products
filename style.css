@@ -1,4 +1,4 @@
-
+/* Стилі для тіла сторінки */
 body {
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -13,6 +13,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #ff6600;
     text-align: center;
     font-style: italic;
+
 }
 
 
@@ -25,12 +26,19 @@ a:hover {
     text-decoration: underline;
 }
 
-
+#veget{
+    float: bottom;
+    height: auto;
+    width: 500px;
+}
 p {
     color: green;
     font-size: 14px;
 }
-
+.listi{
+    text-align: center;
+    background-color: rebeccapurple;
+}
 
 ul {
     list-style-type: square;
