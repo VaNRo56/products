@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Продукти</title>
-    <!-- <style>
+    <title>Продуктовий магазин</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
         body {
             background-color: #f5f5dc;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -30,90 +31,83 @@
             width: 100px;
             height: auto;
         }
-    </style> -->
-    <link rel="stylesheet" href="style.css">
+    </style>
 </head>
-<body alink="red">
-    <h1>Сторінка про продукти</h1>
-    <p id="special-text"><b>Їжа</b> - це не лише джерело енергії, а й задоволення та культура.</p>
-    <p><i>Продукти харчування</i> поділяються на різні категорії: фрукти, овочі, м'ясо тощо.</p>
+<body>
+    <header>
+        <h1 style="color: green; align-items: center;">Ласкаво просимо до нашого продуктового магазину</h1>
+        <p>У нас ви знайдете найсвіжіші та найякісніші продукти за доступними цінами!</p>
+        <nav>
+            <ul class="linkis">
+                <li><a href="#table">Таблиця продуктів</a></li>
+                <li><a href="Header.html">Головна</a></li>
+                <li><a href="Footage_Products.html">Асортимент</a></li>
+                <li><a href="main.html">Про нас</a></li>
+                <li><a href="https://www.wikipedia.org" target="_blank">Детальніше про продукти</a></li>
+            </ul>
+        </nav>
+    </header>
+  
+    <section>
+        <h2>Що ми пропонуємо?</h2>
+        <p><b>Продукти харчування</b> - це основа здорового способу життя. У нашому магазині ви знайдете:</p>
+        <ul class="listi">
+            <li>Свіжі овочі та фрукти</li>
+            <li>Молочні продукти</li>
+            <li>М'ясо та рибу</li>
+            <li>Випічку та кондитерські вироби</li>
+        </ul>
+        <ul>
+            <li type="circle">Фрукти</li>
+            <li type="square">Овочі</li>
+        </ul>
+        <ol>
+            <li>Молочні продукти</li>
+            <li>М'ясо</li>
+        </ol>
+        <dl>
+            <dt>Яблука</dt>
+            <dd>Корисні та смачні фрукти.</dd>
+            <dt>Молоко</dt>
+            <dd>Багате на кальцій.</dd>
+        </dl>
+    </section>
+
+    <section>
+        <h2>Каталог продуктів</h2>
+        <table>
+            <tr>
+                <th><b>Фото</b></th>
+                <th>Назва</th>
+                <th>Ціна</th>
+                <th>Посилання</th>
+            </tr>
+            <tr>
+                <td><img src="apple.jpg" alt="Яблуко" id="veget"></td>
+                <td>Яблуко</td>
+                <td>30 грн/кг</td>
+                <td><a href="https://en.wikipedia.org/wiki/Apple">Детальніше</a></td>
+            </tr>
+            <tr>
+                <td><img src="milk.jpg" alt="Молоко"></td>
+                <td>Молоко</td>
+                <td>50 грн/л</td>
+                <td><a href="https://en.wikipedia.org/wiki/Milk">Детальніше</a></td>
+            </tr>
+        </table>
+    </section>
+
+
+
     
-    <h2>Гіперпосилання</h2>
-    <ul>
-        <li><a href="#table">Перехід до таблиці</a></li>
-        <li><a href="Header.html">Перехід на іншу сторінку</a></li>
-        <li><a href="Footage_Products.html">Перехід на FOOTAGE</a></li>
-        <li><a href="main.html">Перехід на MAIN</a></li>
-        <li><a href="https://www.wikipedia.org" target="_blank">Перехід на Вікіпедію</a></li>
-    </ul>
-    
-    <h2>Зображення</h2>
-    <a href="vegetable.png" target="_blank">
-        <img src="vegetable.png" alt="Продукт" id="veget">
-    </a>
-    
-    <h2>Списки</h2>
-    <ul>
-        <li type="circle">Фрукти</li>
-        <li type="square">Овочі</li>
-    </ul>
-    <ol>
-        <li>Молочні продукти</li>
-        <li>М'ясо</li>
-    </ol>
-    <dl class="listi">
-        <dt>Яблука</dt>
-        <dd>Корисні та смачні фрукти.</dd>
-        <dt>Молоко</dt>
-        <dd>Багате на кальцій.</dd>
-    </dl>
-    
-    <h2 id="table">Таблиця</h2>
-    <table>
-        <tr>
-            <th>Фото</th>
-            <th>Посилання</th>
-            <th>Опис</th>
-        </tr>
-        <tr>
-            <td><img src="apple.jpg" alt="Яблуко"></td>
-            <td><a href="https://en.wikipedia.org/wiki/Apple">Детальніше</a></td>
-            <td>Свіже червоне яблуко</td>
-        </tr>
-        <tr>
-            <td><img src="milk.jpg" alt="Молоко"></td>
-            <td><a href="https://en.wikipedia.org/wiki/Milk">Детальніше</a></td>
-            <td>Органічне молоко</td>
-        </tr>
-    </table>
-    
-    <h2>Складна таблиця</h2>
-    <table>
-        <colgroup>
-            <col style="background-color:#ffcc99">
-            <col>
-            <col style="background-color:#99ccff">
-        </colgroup>
-        <tr>
-            <th rowspan="2">Категорія</th>
-            <th colspan="2">Продукти</th>
-        </tr>
-        <tr>
-            <th>Назва</th>
-            <th>Ціна</th>
-        </tr>
-        <tr>
-            <td rowspan="2">Фрукти</td>
-            <td>Яблуко</td>
-            <td>30 грн</td>
-        </tr>
-        <tr>
-            <td>Банан</td>
-            <td>40 грн</td>
-        </tr>
-    </table>
-    
-    <h2>Плаваючий фрейм</h2>
+    <h2>Додаткова інформація</h2>
+    <p>У нас завжди свіжі продукти з екологічно чистих господарств. Купуйте якісне – піклуйтеся про своє здоров'я!</p>
+
+    <h2>Інтерактивний розділ</h2>
     <iframe src="https://www.wikipedia.org" width="600" height="400"></iframe>
+
+    <footer>
+        <p>&copy; 2025 Продуктовий магазин. Всі права захищені.</p>
+    </footer>
 </body>
 </html>

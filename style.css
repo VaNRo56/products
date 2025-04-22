@@ -1,4 +1,16 @@
-/* Стилі для тіла сторінки */
+a:link {
+    color: green;
+}
+a:visited {
+    color: purple;
+}
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+a:active {
+    color: orange;
+}
 body {
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -8,27 +20,64 @@ body {
     background-color: #f5f5dc; 
 }
 
+/* Контекстні селектори */
+
+
+nav ul.linkis > a {
+    color: red ;
+    font-weight: bold;
+}
+
+/* nav ul.linkis a {
+    color: #2e8b57 !important;
+    font-weight: bold;
+} */
+section table tr td {
+    background-color: #f0fff0;
+}
+
+/* Сусідні селектори */
+h2 + p {
+    font-style: italic;
+    color: #556b2f;
+    font-size: 1.1em;
+}
+
+dt + dd {
+    margin-left: 25px;
+    color: #4682b4;
+}
+
+/* Дочірні селектори */
+section > ul.listi > li {
+    color: #8b4513;
+    font-size: 1.1em;
+    list-style-type: none;
+}
+
+table > tbody > tr > td > img {
+    border: 2px solid #228b22;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
     color: #ff6600;
     text-align: center;
     font-style: italic;
-
 }
 
-
-a {
-    color: blue !important; 
+/* a {
+    color: blue ; 
     text-decoration: none;
 }
 a:hover {
     color: red;
     text-decoration: underline;
-}
+} */
 
 #veget{
-    float: bottom;
-    height: auto;
     width: 500px;
 }
 p {
@@ -38,6 +87,9 @@ p {
 .listi{
     text-align: center;
     background-color: rebeccapurple;
+}
+.linkis>li{
+    color:red;
 }
 
 ul {
@@ -63,7 +115,6 @@ dd {
     margin-left: 20px;
 }
 
-
 table {
     width: 80%;
     border-collapse: collapse;
@@ -82,9 +133,63 @@ th {
     color: #000;
 }
 
-
-#special-text {
-    font-size: 18px;
-    font-weight: bold;
-    color: darkblue;
+/* Новий сусідній селектор для продуктів */
+tr:hover + tr td {
+    background-color: #fffacd;
 }
+
+/* Дочірній селектор для footer */
+footer > p {
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Плаваючий блок */
+.float-box {
+    width: 250px;
+    height: 120px;
+    background-color: lightcoral;
+    float: left;
+    margin-right: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    color: white;
+    text-align: center;
+}
+
+/* Абсолютне позиціонування */
+.position-box {
+    width: 250px;
+    height: 120px;
+    background-color: lightblue;
+    position: absolute;
+    /* top: 1200px; */
+    left: 1000px;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    color: white;
+    text-align: center;
+}
+
+/* Псевдокласи посилань */
+
+
+/* Псевдоклас :first-child */
+ul.listi li:first-child {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+/* Псевдоелементи */
+.styled-text::before {
+    content: "🍏 ";
+    color: gold;
+}
+.styled-text::after {
+    content: " 🍎";
+    color: gold;
+}
+
