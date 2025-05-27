@@ -1,6 +1,10 @@
 a:link {
     color: green;
 }
+.highlight {
+  background-color: yellow;
+}
+
 a:visited {
     color: purple;
 }

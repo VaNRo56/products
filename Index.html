@@ -5,10 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Продуктовий магазин</title>
     <link rel="stylesheet" href="style.css">
+
     <style>
         body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+                Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             background-color: #f5f5dc;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            transition: background-color 0.5s ease;
+            padding: 20px;
+        }
+        #message {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #aaa;
+            background-color: #fff;
+        }
+        button {
+            margin: 5px 10px 5px 0;
+            padding: 10px 15px;
+            font-size: 1em;
+            cursor: pointer;
         }
         /* a {
             color: blue;
@@ -31,12 +47,36 @@
             width: 100px;
             height: auto;
         }
+
+
+  #apple {
+    width: 100px;
+    cursor: grab;
+    position: absolute;
+    user-select: none;
+  }
+  #basket {
+    width: 150px;
+    height: 150px;
+    border: 3px solid green;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 200px;
+  }
+  #basket.highlight {
+    border-color: orange;
+    background-color: #fffae6;
+  }
+
+
+
+
     </style>
 </head>
 <body>
     <header>
         <h1 style="color: green; align-items: center;">Ласкаво просимо до нашого продуктового магазину</h1>
-        <p>У нас ви знайдете найсвіжіші та найякісніші продукти за доступними цінами!</p>
+        <p class="info">У нас ви знайдете найсвіжіші та найякісніші продукти за доступними цінами!</p>
         <nav>
             <ul class="linkis">
                 <li><a href="#table">Таблиця продуктів</a></li>
@@ -47,7 +87,33 @@
             </ul>
         </nav>
     </header>
-  
+<img src="apple.jpg" alt="Яблуко" id="apple" style="top: 100px; left: 50px;">
+<div id="basket">Кошик для яблука</div>
+<section style="text-align:center; margin: 30px 0;">
+    <!-- <button id="start-dialog">Розпочати діалог з користувачем</button> -->
+    <button id="show-developer">Показати інформацію про розробника</button>
+    <button id="compare-strings">Порівняти два рядки</button>
+    <button id="change-bg">Змінити фон на 30 секунд</button>
+    <button id="go-wikipedia">Перейти на Wikipedia</button>
+</section>
+<button onclick="handleClickAttr(event)">Натисніть кнопку магазину</button>
+<button id="btnProp">Кнопка магазину</button>
+<button id="btnAdd">Кнопка магазину</button>
+<button id="btnObj">Обробник магазину</button>
+<button id="btnRemove">Кнопка видалення продукту магазину</button>
+
+<ul id="productList">
+  <li>Яблуко — свіже і солодке</li>
+  <li>Молоко — натуральне та корисне</li>
+  <li>Хліб — щойно з печі</li>
+</ul>
+
+<div id="menu">
+  <button data-behavior="alert">Показати повідомлення магазину</button>
+  <button data-behavior="log">Записати в консоль магазину</button>
+  <button data-behavior="changeColor">Змінити колір кнопки магазину</button>
+</div>
+
     <section>
         <h2>Що ми пропонуємо?</h2>
         <p><b>Продукти харчування</b> - це основа здорового способу життя. У нашому магазині ви знайдете:</p>
@@ -96,7 +162,67 @@
             </tr>
         </table>
     </section>
+    <script src="script.js"></script>
 
+    <!-- Внутрішній скрипт для подій кнопок та маніпуляцій DOM -->
+    <script>
+      // Запускаємо функції із зовнішнього файлу
+
+
+      document.getElementById("compare-strings").addEventListener("click", () => {
+        let s1 = prompt("Введіть перший рядок:");
+        if (s1 === null) return;
+        let s2 = prompt("Введіть другий рядок:");
+        if (s2 === null) return;
+        compareStrings(s1, s2);
+      });
+
+      document.getElementById("change-bg").addEventListener("click", () => {
+        const originalColor = document.body.style.backgroundColor;
+        document.body.style.backgroundColor = "#d1ffd6"; // світло-зелений фон
+
+        setTimeout(() => {
+          document.body.style.backgroundColor = originalColor || "#f5f5dc";
+        }, 30000);
+      });
+
+      document.getElementById("go-wikipedia").addEventListener("click", () => {
+        location.href = "https://www.wikipedia.org";
+      });
+
+      // Приклад роботи з DOM
+      const sectionTitle = document.getElementById("section1");
+      sectionTitle.style.color = "darkgreen";
+
+      const infoParagraphs = document.querySelectorAll("p.info");
+      infoParagraphs.forEach((p, i) => {
+        p.style.fontWeight = "bold";
+        p.textContent += ` (Пункт ${i + 1})`;
+      });
+
+      // Створення та вставка нового елемента
+      const newDiv = document.createElement("div");
+      const newText = document.createTextNode("Новий текст, доданий через createTextNode.");
+      newDiv.appendChild(newText);
+      document.body.appendChild(newDiv);
+
+      // Використання prepend, after, replaceWith, remove
+      const prependedDiv = document.createElement("div");
+      prependedDiv.textContent = "Цей блок додано в початок сторінки (prepend).";
+      document.body.prepend(prependedDiv);
+
+      const afterDiv = document.createElement("div");
+      afterDiv.textContent = "Цей блок додано після заголовка (after).";
+      sectionTitle.after(afterDiv);
+
+      const replacementTitle = document.createElement("h2");
+      replacementTitle.textContent = "Новий заголовок замість старого";
+      sectionTitle.replaceWith(replacementTitle);
+
+      if (infoParagraphs.length > 0) {
+        infoParagraphs[0].remove();
+      }
+    </script>
 
 
     
